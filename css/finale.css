@@ -1,0 +1,99 @@
+/* =========================================================
+   پیام پایانی (بعد از تمام شدن آهنگ)
+   ========================================================= */
+#finale {
+  position: fixed;
+  inset: 0;
+  z-index: 15;
+  display: grid;
+  place-items: center;
+  padding: calc(24px + env(safe-area-inset-top, 0px)) 24px calc(24px + env(safe-area-inset-bottom, 0px));
+  opacity: 0;
+  pointer-events: none;
+  /* ماه پشت متن دیده شود ولی متن خوانا بماند */
+  background: radial-gradient(ellipse at 50% 50%, rgba(3, 1, 10, 0.78) 0%, rgba(3, 1, 10, 0.55) 55%, rgba(3, 1, 10, 0.25) 100%);
+}
+#finale.on {
+  pointer-events: auto;
+}
+#finale canvas.embers {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.finale-card {
+  position: relative;
+  width: min(640px, 100%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(14px, 3.2vh, 26px);
+}
+.finale-title {
+  font-family: var(--hand-font);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 9vw, 4rem);
+  line-height: 1.5;
+  background: linear-gradient(180deg, #ffffff 0%, #e6d2ff 55%, #b98cff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 18px rgba(157, 92, 255, 0.65));
+}
+.finale-title .w {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+}
+.finale-lines {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 2.2vh, 18px);
+}
+.finale-line {
+  font-size: clamp(1rem, 3.9vw, 1.28rem);
+  font-weight: 400;
+  line-height: 2.1;
+  color: rgba(240, 228, 255, 0.92);
+  text-shadow: 0 0 14px rgba(0, 0, 0, 0.8);
+  will-change: transform, opacity, filter;
+}
+.finale-sign {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--hand-font);
+  font-size: clamp(1.4rem, 5vw, 1.9rem);
+  color: #ffd6e2;
+  text-shadow: 0 0 16px rgba(255, 110, 150, 0.6);
+}
+.finale-sign svg {
+  width: 1.1em;
+  height: 1.1em;
+  filter: drop-shadow(0 0 8px rgba(255, 90, 130, 0.8));
+}
+.finale-actions {
+  margin-top: 6px;
+  display: flex;
+  gap: 12px;
+}
+.finale-btn {
+  font: 500 0.95rem/1 var(--ui-font);
+  color: var(--lilac);
+  background: rgba(20, 10, 40, 0.4);
+  border: 1px solid rgba(217, 184, 255, 0.45);
+  border-radius: 999px;
+  padding: 0.8rem 1.8rem;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background 0.2s ease;
+}
+.finale-btn:hover,
+.finale-btn:focus-visible {
+  background: rgba(157, 92, 255, 0.25);
+  outline: none;
+}

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#05030c" />
+    <meta name="color-scheme" content="dark" />
+    <title>تولدت مبارک، لیلا</title>
+    <meta name="description" content="یک نامه‌ی کوچک، یک آسمون پر ستاره و یک ماه، فقط برای لیلا." />
+    <meta property="og:title" content="تولدت مبارک، لیلا" />
+    <meta property="og:description" content="یک نامه‌ی کوچک، یک آسمون پر ستاره و یک ماه، فقط برای لیلا." />
+    <meta property="og:type" content="website" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23d0384f'/%3E%3Cstop offset='1' stop-color='%235e0b1c'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='28' fill='url(%23g)'/%3E%3Cpath d='M32 46C14 33 20 18 32 27c12-9 18 6 0 19z' fill='%23ffb3c0' opacity='.85'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/envelope.css" />
+    <link rel="stylesheet" href="css/finale.css" />
+    <link rel="preload" href="assets/fonts/lyrics.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/aref-ruqaa.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/vazirmatn.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+  <body>
+    <!-- صحنه‌ی سه‌بعدی کهکشان و ماه -->
+    <div id="app"></div>
+
+    <!-- صحنه‌ی پاکت (با جاوااسکریپت ساخته می‌شود) -->
+    <section id="stage" aria-label="نامه" hidden></section>
+
+    <!-- پیام پایانی -->
+    <section id="finale" aria-live="polite" hidden></section>
+
+    <!-- نوار بارگذاری -->
+    <div id="loader" role="status" aria-label="در حال بارگذاری">
+      <div id="loadbar"><span></span></div>
+    </div>
+
+    <!-- دکمه‌ی قطع/وصل صدا -->
+    <button id="sound" type="button" aria-label="قطع و وصل صدا" aria-pressed="false" hidden>
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        <path class="spk" d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor" />
+        <path class="wave" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        <path class="mute" d="M16 9l5 6M21 9l-5 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+      </svg>
+    </button>
+
+    <!-- پیام خطا (مثلاً مرورگر بدون WebGL) -->
+    <div id="fatal" role="alert" hidden>
+      <p>
+        این مرورگر یا دستگاه از گرافیک سه‌بعدی (WebGL) پشتیبانی نمی‌کند.<br />
+        لطفاً با Chrome، Safari یا Firefox نسخه‌ی جدید باز کنید.
+      </p>
+    </div>
+
+    <noscript>
+      <p style="color:#d9b8ff;text-align:center;padding:2rem;font-family:sans-serif">
+        برای دیدن این صفحه باید جاوااسکریپت فعال باشد.
+      </p>
+    </noscript>
+
+    <script src="js/vendor/gsap.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
